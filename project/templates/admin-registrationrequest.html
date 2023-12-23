@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin ERP Portal</title>
+<!-- <link rel="stylesheet" href="../static/ui.css"> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}">
+<script src="https://kit.fontawesome.com/281d3d428e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="side">
+		<!-- Div Header-->
+		<h2>Admin ERP Portal</h2>
+		<h3>Welcome    {{username}}</h3><br>
+
+		<a href="{{ url_for('adminchoice', input='dashboard') }}"><i class="fa fa-user"></i>  Dashboard</a>
+        <a href="{{ url_for('adminchoice', input='profile') }}"><i class="fa fa-address-book-o"></i>Profile</a>
+        <a href="{{ url_for('adminchoice', input='studentrecord') }}"><i class="fa fa-user-graduate"></i>Student Records</a>
+		<a href="{{ url_for('adminchoice', input='facultyrecord') }}"><i class="fa fa-chalkboard-user"></i>Faculty Records</a>
+        <a href="{{ url_for('adminchoice', input='lectures') }}"><i class="fa fa-calendar-check-o"></i>Lectures Management</a>
+		<a href="{{ url_for('adminchoice', input='admissionrequest') }}"><i class="fa fa-file-lines"></i>Admission Request</a>
+        <a href="{{ url_for('adminchoice', input='registrationrequest') }}" style="background-color: #fff ; color: #0089ff;"><i class="fa-regular fa-file-lines"></i>Registration Request</a>
+        <!-- <a href="{{ url_for('adminchoice', input='faculty-portal') }}"><i class="fa fa-file-pen"></i>Courses and Syllabus</a> -->
+        <!-- <a href="{{ url_for('adminchoice', input='faculty-portal') }}"><i class="fa fa-book"></i>Library Management</a> -->
+		<!-- <a href="#"> Java </a> -->
+	</div>
+	<div style="display: grid;padding-left: 80px;padding-right: 80px;">
+		<div class="items">
+			<h1>Registration Requests</h1>
+		<div id="admitcard" style="box-sizing: border-box;opacity: 1; background-color: rgb(255, 255, 255); padding: 0 50px 0 50px;">
+			<br>
+
+				<table border="2px solid" class="datatable">
+					<tr>
+						<th>Sr No.</th>
+						<th>Registration ID</th>
+						<th>Name</th>
+						<th>Course</th>
+						<th>Phone No.</th>
+					</tr>
+					{% for row in registrationrequests %}
+					<tr>
+						<td>{{ row[0] }}</td>
+
+						<td>{{ row[1] }}</td>
+						<td>{{ row[2] }}</td>
+						<td>{{row[3]}}</td>
+						<td>{{row[4]}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+		</div></div>
+	</div>
+</div>
+</body>
+</html>

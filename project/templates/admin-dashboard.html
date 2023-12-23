@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin ERP Portal</title>
+<!-- <link rel="stylesheet" href="../static/ui.css"> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}">
+<script src="https://kit.fontawesome.com/281d3d428e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="side">
+		<!-- Div Header-->
+		<h2>Admin ERP Portal</h2>
+		<h3>Welcome    {{username}}</h3><br>
+
+		<a href="{{ url_for('adminchoice', input='dashboard') }}" style="background-color: #fff ; color: #0089ff;"><i class="fa fa-user"></i>  Dashboard</a>
+        <a href="{{ url_for('adminchoice', input='profile') }}"><i class="fa fa-address-book-o"></i>Profile</a>
+        <a href="{{ url_for('adminchoice', input='studentrecord') }}"><i class="fa fa-user-graduate"></i>Student Records</a>
+		<a href="{{ url_for('adminchoice', input='facultyrecord') }}"><i class="fa fa-chalkboard-user"></i>Faculty Records</a>
+        <a href="{{ url_for('adminchoice', input='lectures') }}"><i class="fa fa-calendar-check-o"></i>Lectures Management</a>
+		<a href="{{ url_for('adminchoice', input='admissionrequest') }}"><i class="fa fa-file-lines"></i>Admission Request</a>
+        <a href="{{ url_for('adminchoice', input='registrationrequest') }}"><i class="fa-regular fa-file-lines"></i>Registration Request</a>
+        <!-- <a href="{{ url_for('adminchoice', input='faculty-portal') }}"><i class="fa fa-file-pen"></i>Courses and Syllabus</a> -->
+        <!-- <a href="{{ url_for('adminchoice', input='faculty-portal') }}"><i class="fa fa-book"></i>Library Management</a> -->
+		<!-- <a href="#"> Java </a> -->
+	</div>
+	<div class="gridbox">
+		<div class="box">
+			<div class="red">Name : {{username}}</div>
+			<div class="blue">Total Department : {{total_department}}</div>
+
+		</div>
+		<div class="box">
+			<div class="green">Total Students : {{total_students}}</div>
+			<div class="yellow">Total Faculties : {{total_faculties}}</div>
+
+
+
+		</div>
+
+	</div>
+</div>
+</body>
+</html>

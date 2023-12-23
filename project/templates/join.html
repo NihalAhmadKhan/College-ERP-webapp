@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+        * {
+        margin: 0px;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        .container {
+        position: relative;
+        width: 100%;
+        background-color: #fff;
+        min-height: 100vh;
+        overflow: hidden;
+        }
+
+        .body{
+            background-color: aliceblue;
+            font-family: "Poppins", sans-serif;
+            margin: 10%;
+        }
+        a{
+            display: grid;
+            text-align: center;
+            color: #fff;
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+
+
+            align-items: center;
+            text-decoration: none;
+        }
+        img{
+            max-width: 100%;
+        }
+        .image{
+            align-items: center;
+        }
+        .gridbox{
+            position:relative;
+            display: grid;
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        .box{
+            background-color: #0089ff;
+
+            border-radius: 30px;
+            display: grid;
+            margin: 50px;
+            min-height: 20vh;
+            /* align-items: center; */
+            justify-content: space-around;
+        }
+        .box:hover{
+            background-color: #004c8f;
+            box-shadow: 10px 10px 20px #ff4141;
+        }
+        .bar{
+            display: grid;
+            align-items: center;
+            text-align: center;
+            background-color: #0089ff;
+            color: #fff;
+            font-family: "Poppins", sans-serif; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="image">
+            <div>
+                <img src="https://quiin.s3.us-east-1.amazonaws.com/vendors/logos/000/394/113/original/ERP-COLLEGE-LOGO-ed2424.png?1615489447" alt="" >
+            </div>
+        </div> -->
+        <div class="bar" style="min-height: 20vh; font-size: 55pt; font-weight: 500;">
+            <p>College ERP Portal</p>
+            
+        </div>
+        <div class="gridbox">
+                <div class="box"><a href="https://www.iec.edu.in/"><h1>College Website</h1></a></div>
+                <div class="box"><a href="https://www.iec.edu.in/contact-us"><h1>Contact Us</h1></a></div>
+                <!-- <div class="box"><a href="./student.html"><h1>Student Portal</h1></a></div> -->
+                <div class="box"><a href="{{ url_for('submit', input='student-portal') }}"><h1>Student Portal</h1></a></div>
+                <!-- <div class="box"><a href="./faculty.html"><h1>Faculty Portal</h1></a></div> -->
+                <div class="box"><a href="{{ url_for('submit', input='faculty-portal') }}"><h1>Faculty Portal</h1></a></div>
+                <!-- <div class="box"><a href="./admin.html"><h1>Admin Portal</h1></a></div> -->
+                <div class="box"><a href="{{ url_for('submit', input='admin-portal') }}"><h1>Admin Portal</h1></a></div>
+                <!-- <div class="box"><a href="./admission.html"><h1>Admission form</h1></a></div> -->
+                <div class="box"><a href="{{ url_for('submit', input='admission-portal') }}"><h1>Admission form</h1></a></div>
+                <!-- <div class="box"><a href="./registration.html"><h1>Registration form</h1></a></div>     -->
+                <div class="box"><a href="{{ url_for('submit', input='registration-portal') }}"><h1>Registration form</h1></a></div>      
+
+        </div>
+    </div>
+    <div class="bar" style=" background-color: black;">
+        <p>&copy; College ERP Portal</p>
+    </div>
+    
+</body>
+</html>

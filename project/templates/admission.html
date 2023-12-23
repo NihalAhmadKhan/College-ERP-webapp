@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./admission.css" /> -->
+    <!-- <link rel="stylesheet" href="./admission.css" type="text/css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admission.css') }}">
+
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="new-old">
+                <form action="/admresponse" class="new-form" method="post">
+                <h2 class="title">Student Admission Form</h2>
+                <table >
+                    <tr><td><div class="input-field"><input type="text" name="first_name" required  placeholder="First Name" autofocus></div></td></tr>
+                    <tr><td><div class="input-field"><input type="text" name="middle_name" placeholder="Middle Name"></div></td></tr>
+                    <tr><td><div class="input-field"><input type="text" name="last_name"required  placeholder="Last Name"></div></td></tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="phone"required  placeholder="Phone Number"></div></td>
+                        <td><div class="input-field"><input type="text" name="alt_phone" placeholder="Alternate Phone Number"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="father_name" required placeholder="Father's Name"></div></td>
+                        <td><div class="input-field"><input type="text" name="Father_occupation"required  placeholder="Father's Occupation"></div></td>
+                    
+                    </tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="mother_name"required  placeholder="Mother's Name"></div></td>
+                        <td><div class="input-field"><input type="text" name="mother_occupation"required  placeholder="Mother's Occupation"></div></td>
+                    
+                    </tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="guardian_name"required  placeholder="Guardian's Name"></div></td>
+                        <td><div class="input-field"><input type="text" name="guardian_relation"required  placeholder="Relation"></div></td>
+                        <td><div class="input-field"><input type="text" name="guardian_phone"required  placeholder="Guardian's Phone Number"></div></td>
+                    
+                    </tr>
+                    <tr><td><div class="input-field"><input type="email" name="email"required  placeholder="Email Address"></div></td></tr>
+                    <tr>
+                        <td>
+                            <select name="gender"required  class="drop">
+                                    <option value="-" class="drop" selected>Select Gender</option>
+                                    <option value="Male" class="drop">Male</option>
+                                    <option value="Female"class="drop">Female</option>
+                                    <option value="Transgender"class="drop">Transgender</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="category" required  class="drop">
+                                <option value="-" selected>Category</option>
+                                <option value="Generl">General</option>
+                                <option value="Gen-EWS">EWS</option>
+                                <option value="OBC">OBC</option>
+                                <option value="SC">SC</option>
+                                <option value="ST">ST</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td><b>Date Of Birth : </b></td>
+                    <td><div class="input-field"><input type="date" name="DOB"required  placeholder="Date Of Birth"></div></td></tr>
+                    <tr><td><b>Permanent Address:</b></td> </tr>
+                    <tr><td><div class="input-field"><input type="text" name="address_1"required  placeholder="Address Line 1"></div></td></tr>
+                    <tr><td><div class="input-field"><input type="text" name="address_2" placeholder="Address Line 2"></div></td></tr>
+                    <tr><td><div class="input-field"><input type="text" name="address_3" placeholder="Address Line 3"></div></td></tr>
+                    
+                    <tr><td><div class="input-field"><input type="text" name="state"required  placeholder="State"></div></td></tr>
+                    <tr><td><div class="input-field"><input type="text" name="pincode"required  placeholder="Pincode"></div></td></tr>
+                    <tr><td><div class="input-field"><input type="text" name="nationality"required  placeholder="Nationality"></div></td></tr>
+                    <tr><td><b>Course You Want To Opt : </b></td></tr>
+                        <tr>
+                            <td><select name="course" id=""required  class="drop">
+                            <option value="-">Course</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="B.Pharma">B.Pharma</option>
+                            <option value="BCA">BCA</option>
+                            <option value="D.Pharma">D.Pharma</option>
+                            <option value="MBA">MBA</option>
+                            <option value="M.Pharma">M.Pharma</option>
+                            <option value="M.Tech">M.Tech</option>
+                            <option value="MCA">MCA</option>
+                        </select></td>
+                        <td>
+                            <select name="stream" id="" required class="drop">
+                            <option value="-">Stream(B.Tech & M.tech only)</option>
+                            <option value="NA">Not Applicable</option>
+                            <option value="EE">EE</option>
+                            <option value="EC">EC</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="CSE">CSE</option>
+                        </select>
+                        </td>
+                        <!-- <td><div class="input-field"><input type="text" name="" placeholder="Score"></div></td> -->
+                        </tr>
+                    <tr><td colspan="2"><h3>Schooling details : </h3></td></tr>
+                    <tr>
+                        <td><b>High School : </b></td>
+
+                    </tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text"  name="board-10"required  placeholder="Board/University"></div></td>
+                        <td><div class="input-field"><input type="text" name="school-10"required  placeholder="School/Collge Name"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="year-10" required placeholder="Year of passing"></div></td>
+                        <td><div class="input-field"><input type="text" name="percentage-10"required  placeholder="%age"></div></td>
+                    </tr>
+                    <tr><td colspan="2"><b>Intermediate or Equivalent : </b></td></tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="board-12"required  placeholder="Board/University"></div></td>
+                        <td><div class="input-field"><input type="text" name="school-12"required  placeholder="School/Collge Name"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="year-12"required  placeholder="Year of passing"></div></td>
+                        <td><div class="input-field"><input type="text" name="percentage-12" required placeholder="%age"></div></td>
+                    </tr>
+                    <tr><td colspan="2"><b>Last Qualifying Exam Details : </b></td></tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="last_exam" required placeholder="Last Qualifying Exam Name"></div></td>
+                        <td><div class="input-field"><input type="text" name="last_roll_no"required  placeholder="Roll Number"></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="input-field"><input type="text" name="year_last"required  placeholder="Year"></div></td>
+                        <td><div class="input-field"><input type="text" name="score_last" required placeholder="Score"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="btn transparent"></td>
+                        <td colspan="2"><input type="reset" class="btn transparent"></td>
+                    </tr>
+
+
+                </table>
+                </form>
+            </div>
+                    <div class="panels-container">
+
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Already A Student?</h3>
+                    <p>Register Here For Next Year</p>
+                    <button class="btn transparent" id="Register-btn"><a href="./registration.html">Register</a></button>
+                </div>
+                <!-- <img src="./img/log.svg" class="image" alt=""> -->
+            </div>
+    
+            <!-- <div class="panel right-panel">
+                <div class="content">
+                    <h3>Not A Student?</h3>
+                    <p>Why not join us today and bring your imagination into reality</p>
+                    <button class="btn transparent" id="Admission-btn">Admission</button>
+                </div>
+                 <img src="./img/register.svg" class="image" alt=""> 
+            </div> -->
+          </div>
+        </div>
+
+    </div>
+    <!-- <script src="./adm.js"></script> -->
+</body>
+</html>

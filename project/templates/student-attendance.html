@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student ERP Portal</title>
+<link rel="stylesheet" href="../static/ui.css">
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}"> -->
+<script src="https://kit.fontawesome.com/281d3d428e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+	<div class="side">
+		<!-- Div Header-->
+		<h2>Student ERP Portal</h2>
+		<h3>Welcome    {{name}}</h3><br>
+
+		<!-- Links in Div -->
+		<a href="{{ url_for('studentchoice', input='dashboard') }}"><i class="fa fa-user"></i>
+			Dashboard
+		</a>
+        <a href="{{ url_for('studentchoice', input='profile') }}"><i class="fa fa-address-book-o"></i>Profile</a>
+        <a href="{{ url_for('studentchoice', input='attendance') }}" style="background-color: #fff ; color: #0089ff;"><i class="fa-solid fa-square-poll-vertical"></i>View Attendance</a>
+		<a href="{{ url_for('studentchoice', input='admitcard') }}"><i class="fa-regular fa-file"></i>Admit card</a>
+		<a href="{{ url_for('studentchoice', input='result') }}"><i class="fa fa-pencil-square-o"></i>Result</a>
+		<a href="{{ url_for('studentchoice', input='registrationform') }}"><i class="fa-regular fa-file-lines"></i>Registration Form</a>
+		<!-- <a href="#"> Java </a> -->
+	</div>
+	<div style="display: grid; place-items: center;height: 80vh;margin: 50px;">
+		<div class="items">
+		<h1>Attendance Not Uploaded</h1>
+		<p style="text-align: center;">Kindly Contact Your Department to upload the attendance
+		</p>
+		<!-- <table>
+			<tr><td><b>Name : </b>{{name}}</td></tr>
+			<tr><td><b>Enrollment Number : </b>{{enrollment_number}}</td></tr>
+			<tr><td><b>Roll number : </b>{{roll_no}}</td></tr>
+			<tr><td><b>Father's Name : </b>{{fathername}}</td></tr>
+			<tr><td><b>Mother's Name : </b>{{mothername}}</td></tr>
+            <tr><td><b>Contact Number : </b>{{contact}}</td></tr>
+			<tr><td><b>Email ID : </b>{{email}}</td></tr>
+			<tr><td><b>Course : </b>{{course}}</td></tr>
+			<tr><td><b>Stream : </b>{{stream}}</td></tr>
+			<tr><td><b>Year : </b>{{year}}</td></tr>
+			<tr><td><b>Section : </b>{{section}}</td></tr>
+			<tr><td><b>Address : </b>{{address}}</td></tr>
+			<tr><td><b>College Name : </b>{{college}}</td></tr> -->
+
+		<!-- </table> -->
+	</div></div>
+</div>
+</body>
+</html>

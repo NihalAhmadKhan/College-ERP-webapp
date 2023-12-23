@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin ERP Portal</title>
+<!-- <link rel="stylesheet" href="../static/ui.css"> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}">
+
+<script src="https://kit.fontawesome.com/281d3d428e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+	<div class="side">
+		<!-- Div Header-->
+		<h2>Admin ERP Portal</h2>
+		<h3>Welcome    {{username}}</h3><br>
+
+		<!-- Links in Div -->
+        
+		<a href="{{ url_for('adminchoice', input='dashboard') }}"><i class="fa fa-user"></i>  Dashboard</a>
+			<a href="{{ url_for('adminchoice', input='profile') }}"><i class="fa fa-address-book-o"></i>Profile</a>
+			<a href="{{ url_for('adminchoice', input='studentrecord') }}"><i class="fa fa-user-graduate"></i>Student Records</a>
+			<a href="{{ url_for('adminchoice', input='facultyrecord') }}"><i class="fa fa-chalkboard-user"></i>Faculty Records</a>
+			<a href="{{ url_for('adminchoice', input='lectures') }}"><i class="fa fa-calendar-check-o"></i>Lectures Management</a>
+			<a href="{{ url_for('adminchoice', input='admissionrequest') }}"><i class="fa fa-file-lines"></i>Admission Request</a>
+			<a href="{{ url_for('adminchoice', input='registrationrequest') }}"><i class="fa-regular fa-file-lines"></i>Registration Request</a>
+			<!-- <a href="{{ url_for('adminchoice', input='faculty-portal') }}"><i class="fa fa-file-pen"></i>Courses and Syllabus</a> -->
+			<!-- <a href="{{ url_for('adminchoice', input='faculty-portal') }}"><i class="fa fa-book"></i>Library Management</a> -->
+		<!-- <a href="#">
+			Registration Form
+		</a> -->
+		<!-- <a href="#"> Java </a> -->
+	</div>
+		<div style="display: grid; place-items: center;height: 80vh;margin: 50px;">
+			<div class="items">
+			<h1>Welcome To Admin ERP Portal</h1>
+			<p style="text-align: center;">Here you can access various features like Upload Student data,Faculty data etc.
+				<br>
+				Click on the services on the sidebar according to your need
+			</p>
+			<!-- <table>
+				<tr><td><b>Name : </b>{{name}}</td></tr>
+				<tr><td><b>Enrollment Number : </b>{{enrollment_number}}</td></tr>
+				<tr><td><b>Roll number : </b>{{roll_no}}</td></tr>
+				<tr><td><b>Father's Name : </b>{{fathername}}</td></tr>
+				<tr><td><b>Mother's Name : </b>{{mothername}}</td></tr>
+				<tr><td><b>Contact Number : </b>{{contact}}</td></tr>
+				<tr><td><b>Email ID : </b>{{email}}</td></tr>
+				<tr><td><b>Course : </b>{{course}}</td></tr>
+				<tr><td><b>Stream : </b>{{stream}}</td></tr>
+				<tr><td><b>Year : </b>{{year}}</td></tr>
+				<tr><td><b>Section : </b>{{section}}</td></tr>
+				<tr><td><b>Address : </b>{{address}}</td></tr>
+				<tr><td><b>College Name : </b>{{college}}</td></tr> -->
+	
+			<!-- </table> -->
+		</div></div>
+	</div>
+</body>
+</html>

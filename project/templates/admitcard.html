@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+        *{
+            font-family: "poppins", sans-serif;
+        }
+        #admit{
+            text-align: center;
+        }
+    </style>
+    <title>Admit card</title>
+</head>
+<body>
+    <!-- <p>{{session['admitcard']}}</p> -->
+    <div style="box-sizing: border-box;opacity: 1; background-color: rgb(255, 255, 255);padding: 0 50px 0 50px; border-radius: 30px;">
+        <br>
+        <table width="100%" >
+            <tr><td><center><b>{{college}}</b></center></td></tr>
+            <tr><td><small><center>{{college_address}}</center></small></td></tr>
+            <tr><td>Roll No : {{roll_no}}</td></tr>
+            <tr><td>Name : {{name}}</td></tr>
+            <tr><td>Class : {{course}}</td></tr>
+            <tr><td>Section : {{section}}</td></tr>
+            <tr><td>Examination : {{exam}}</td></tr>
+            <tr></tr>
+            <tr></tr>
+            <table border="1px" style="border-collapse: collapse; width: 100%;" id="admit">
+                <tr>
+                    <th>Sr No.</th>
+                    <th>Subject code</th>
+                    <th>Subject Name</th>
+                    <th>Date</th>
+                </tr>
+                {% for row in subjects %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{row[3]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </table>
+        <br><br><br><br><br>
+
+    </div>
+</body>
+</html>
