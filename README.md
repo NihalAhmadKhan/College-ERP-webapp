@@ -56,7 +56,7 @@ A comprehensive Enterprise Resource Planning (ERP) system for **IEC College of E
 
 ```
 College-ERP-webapp/
-├── project/
+├── College ERP Portal/
 │   ├── app.py                 # Main Flask application (entry point)
 │   ├── static/
 │   │   └── css/               # Stylesheets
