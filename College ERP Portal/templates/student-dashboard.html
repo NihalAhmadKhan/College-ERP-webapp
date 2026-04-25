@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student ERP Portal</title>
+<link rel="stylesheet" href="../static/ui.css">
+<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}"> -->
+<script src="https://kit.fontawesome.com/281d3d428e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+	<div class="side">
+		<!-- Div Header-->
+		<h2>Student ERP Portal</h2>
+		<h3>Welcome    {{name}}</h3><br>
+
+		<!-- Links in Div -->
+		<a href="{{ url_for('studentchoice', input='dashboard') }}" style="background-color: #fff ; color: #0089ff;"><i class="fa fa-user"></i>
+			Dashboard
+		</a>
+        <a href="{{ url_for('studentchoice', input='profile') }}" ><i class="fa fa-address-book-o"></i>Profile</a>
+        <a href="{{ url_for('studentchoice', input='attendance') }}"><i class="fa-solid fa-square-poll-vertical"></i>View Attendance</a>
+		<a href="{{ url_for('studentchoice', input='admitcard') }}"><i class="fa-regular fa-file"></i>Admit card</a>
+		<a href="{{ url_for('studentchoice', input='result') }}"><i class="fa fa-pencil-square-o"></i>Result</a>
+		<a href="{{ url_for('studentchoice', input='registrationform') }}"><i class="fa-regular fa-file-lines"></i>Registration Form</a>
+		<!-- <a href="#"> Java </a> -->
+	</div>
+	<div class="gridbox">
+		<div class="box">
+			<div class="red">Roll Number : {{roll_no}}</div>
+			<div class="blue">Course : {{course}}</div>
+
+		</div>
+		<div class="box">
+			<div class="green">Total Subjects : {{total_subjects}}</div>
+			<div class="yellow">Overall Attendance : {{attendance}}</div>
+
+
+
+		</div>
+		<!-- <div class="box">
+
+		</div>
+		<div class="box">
+
+xbhashhb
+		</div> -->
+
+	</div>
+</div>
+</body>
+</html>

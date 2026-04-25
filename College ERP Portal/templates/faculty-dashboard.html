@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Faculty ERP Portal</title>
+<!-- <link rel="stylesheet" href="../static/ui.css"> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}">
+<script src="https://kit.fontawesome.com/281d3d428e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+	<div class="side">
+		<!-- Div Header-->
+		<h2>Faculty ERP Portal</h2>
+		<h3>Welcome    {{username}}</h3><br>
+
+		<a href="{{ url_for('facultychoice', input='dashboard') }}" style="background-color: #fff ; color: #0089ff;"><i class="fa fa-user"></i>  Dashboard</a>
+        <a href="{{ url_for('facultychoice', input='profile') }}"><i class="fa fa-address-book-o"></i>Profile</a>
+        <a href="{{ url_for('facultychoice', input='attendance') }}"><i class="fa fa-cloud-upload"></i>Upload Attendance</a>
+		<a href="{{ url_for('facultychoice', input='lecture') }}"><i class="fa fa-calendar-check-o"></i>
+			Lecture Schedule
+		</a>
+		<a href="{{ url_for('facultychoice', input='marks') }}"><i class="fa fa-pencil-square-o"></i>
+			Upload Marks
+		</a>
+		<!-- <a href="#"> Java </a> -->
+	</div>
+	<div class="gridbox">
+		<div class="box">
+			<div class="red">Faculty ID : {{faculty_id}}</div>
+			<div class="blue">Name : {{name}}</div>
+
+		</div>
+		<div class="box">
+			<div class="green">Total Subjects Alloted: {{subjects_alloted}}</div>
+			<div class="yellow">Department : {{department}}</div>
+
+
+
+		</div>
+
+	</div>
+	<!-- <div class="content">
+		<div class="items">
+		<h1>Profile</h1><br>
+		<table>
+			<tr><td><b>Name : </b>{{name}}</td></tr>
+			<tr><td><b>Faculty ID : </b>{{faculty_id}}</td></tr>
+
+			<tr><td><b>Father's Name : </b>{{fathername}}</td></tr>
+			<tr><td><b>Mother's Name : </b>{{mothername}}</td></tr>
+            <tr><td><b>Contact Number : </b>{{contact}}</td></tr>
+			<tr><td><b>Email ID : </b>{{email}}</td></tr>
+            <tr><td><b>Qualifications : </b>{{qualification}}</td></tr>
+			<tr><td><b>Subjects : </b>{{subject}}</td></tr>
+			<tr><td><b>Address : </b>{{address}}</td></tr>
+			<tr><td><b>Stream : </b>{{stream}}</td></tr>
+			<tr><td><b>Year : </b>{{year}}</td></tr>
+			<tr><td><b>Section : </b>{{section}}</td></tr> 
+			<tr><td><b>College Name : </b>{{college}}</td></tr>
+
+		</table>
+	</div>
+	</div> -->
+</div>
+</body>
+</html>

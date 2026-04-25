@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student ERP Portal</title>
+<!-- <link rel="stylesheet" href="../static/ui.css"> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ui.css') }}">
+<script src="https://kit.fontawesome.com/281d3d428e.js" crossorigin="anonymous"></script>
+<style>
+	#bold td{
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="side" >
+		<!-- Div Header-->
+		<h2>Student ERP Portal</h2>
+		<h3>Welcome    {{name}}</h3><br>
+
+		<!-- Links in Div -->
+		<a href="{{ url_for('studentchoice', input='dashboard') }}"><i class="fa fa-user"></i>
+			Dashboard
+		</a>
+        <a href="{{ url_for('studentchoice', input='profile') }}"><i class="fa fa-address-book-o"></i>Profile</a>
+        <a href="{{ url_for('studentchoice', input='attendance') }}"><i class="fa-solid fa-square-poll-vertical"></i>View Attendance</a>
+		<a href="{{ url_for('studentchoice', input='admitcard') }}" style="background-color: #fff ; color: #0089ff;"><i class="fa-regular fa-file"></i>Admit card</a>
+		<a href="{{ url_for('studentchoice', input='result') }}"><i class="fa fa-pencil-square-o"></i>Result</a>
+		<a href="{{ url_for('studentchoice', input='registrationform') }}"><i class="fa-regular fa-file-lines"></i>Registration Form</a>
+		<!-- <a href="#"> Java </a> -->
+	</div>
+	<div style="display: grid;padding-left: 80px;padding-right: 80px;">
+		<div class="items">
+			<form action="/examdetails" method="post">
+				<h1>Select The Required Details</h1>
+				<table style="width: 50% ;" id="bold">
+					<tr>
+						<td>Class : {{course}}</td>
+						<td>Section : {{section}}</td>
+					</tr>
+					<tr>	
+						<td>
+							<!-- <label for="">Exam name : </label> -->
+							Exam Name : </td>
+						<td>
+							<select name="examname" id="" class="input-field">
+								<option value="-">----</option>
+								<option value="CT 1">CT 1</option>
+								<option value="CT 2">CT 2</option>
+								<option value="PUT">PUT</option>
+
+							</select>
+						</td>
+						
+					</tr>
+					<tr><td><input type="submit" class="btn"></td>
+						
+					</tr>
+				</table>
+			</form>
+			<br><br>
+			{% if visible %}
+			<div id="admitcard" style="box-sizing: border-box;opacity: 1; background-color: rgb(255, 255, 255);outline: 1px solid; padding: 0 50px 0 50px; border-radius: 30px;">
+				<br>
+				<table width="100%" class="profile">
+					<tr><td><center><b>{{college}}</b></center></td></tr>
+					<tr><td><small><center>{{college_address}}</center></small></td></tr>
+					<tr><td>Roll No : {{roll_no}}</td></tr>
+					<tr><td>Name : {{name}}</td></tr>
+					<tr><td>Class : {{course}}</td></tr>
+					<tr><td>Section : {{section}}</td></tr>
+					<tr><td>Examination : {{exam}}</td></tr>
+					<table border="1px" style="border-collapse: collapse; width: 100%;">
+						<tr>
+							<th>Sr No.</th>
+							<th>Subject code</th>
+							<th>Subject Name</th>
+							<th>Date</th>
+						</tr>
+						{% for row in subjects %}
+						<tr>
+							<td>{{ row[0] }}</td>
+
+							<td>{{ row[1] }}</td>
+							<td>{{ row[2] }}</td>
+							<td>{{row[3]}}</td>
+						</tr>
+						{% endfor %}
+					</table>
+
+				</table>
+				<br><br><br><br><br>
+
+			</div>
+			<br><br>
+			<form action="/download-admitcard" method="post">
+				<center><button type="submit" name="submit" value="download" class="btn">Download</button></center>
+			</form>
+			<br><br><br>
+			{% endif %}
+			
+			<!-- <table>
+
+				<tr><td><b>Name : </b>{{name}}</td></tr>
+				<tr><td><b>Enrollment Number : </b>{{enrollment_number}}</td></tr>
+				<tr><td><b>Roll number : </b>{{roll_no}}</td></tr>
+				<tr><td><b>Father's Name : </b>{{fathername}}</td></tr>
+				<tr><td><b>Mother's Name : </b>{{mothername}}</td></tr>
+				<tr><td><b>Contact Number : </b>{{contact}}</td></tr>
+				<tr><td><b>Email ID : </b>{{email}}</td></tr>
+				<tr><td><b>Course : </b>{{course}}</td></tr>
+				<tr><td><b>Stream : </b>{{stream}}</td></tr>
+				<tr><td><b>Year : </b>{{year}}</td></tr>
+				<tr><td><b>Section : </b>{{section}}</td></tr>
+				<tr><td><b>Address : </b>{{address}}</td></tr>
+				<tr><td><b>College Name : </b>{{college}}</td></tr>
+
+			</table> -->
+		</div>
+		<!-- <div class="item" style="background-color: purple;">
+		</div> -->
+	</div>
+</div>
+</body>
+</html>
